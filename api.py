@@ -19,6 +19,31 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
+def call_stored_proc_modular(proc_name: str, args: dict = None):
+    """
+    Call any stored procedure (RPC) on Supabase.
+
+    Parameters:
+    - proc_name: the name of the stored procedure (as a string)
+    - args: optional dictionary of arguments to pass into the stored procedure
+
+    Example:
+    call_stored_proc_modular("insert_user", {"name": "Alice", "city": "Dallas", "age": 30})
+    """
+    url = f"{SUPABASE_URL}/rest/v1/rpc/{proc_name}"
+    
+    payload = args or {}  # default to empty dict if None
+
+    response = requests.post(url, headers=HEADERS, json=payload)
+
+    if response.ok:
+        print(f"✅ Stored proc '{proc_name}' executed successfully.")
+        return response.json()
+    else:
+        print(f"❌ Failed to execute proc '{proc_name}':", response.text)
+        return None
+
+
 def send_sql_query(sql: str):
     url = f"{SUPABASE_URL}/rest/v1/rpc/execute_sql"
 

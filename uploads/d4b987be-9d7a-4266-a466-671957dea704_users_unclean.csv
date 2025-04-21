@@ -1,0 +1,22 @@
+name,city,age
+ Alice , dallas , 30
+BOB,Chicago,25
+eve,austin,thirty-five
+,Seattle,22
+Sam, , 29
+Lily,New York,27
+BOB,Chicago,25
+michael,Los Angeles,NaN
+JULIE,phoenix,24
+tom,Houston, 31
+amy,   Denver,28
+Alex,,thirty
+nina,Dallas, 26
+eve,austin,thirty-five
+ George , San Diego , 
+sara,Chicago,30
+MIKE,Las Vegas,22
+lucy,San Francisco,not available
+, , 
+TOM,Houston,31
+
